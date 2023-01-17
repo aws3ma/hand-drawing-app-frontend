@@ -10,7 +10,21 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { HistoryComponent } from './history/history.component';
 import { CompareComponent } from './compare/compare.component';
-
+import { MenubarModule } from 'primeng/menubar';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { ToastModule } from 'primeng/toast';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FileUploadModule } from 'primeng/fileupload';
+import { HttpClientModule } from '@angular/common/http';
+import { AccordionModule } from 'primeng/accordion';
+import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule } from '@angular/forms';
+import {PasswordModule} from 'primeng/password';
+import { DividerModule } from "primeng/divider";
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,13 +34,27 @@ import { CompareComponent } from './compare/compare.component';
     HeaderComponent,
     HomeComponent,
     HistoryComponent,
-    CompareComponent
+    CompareComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MenubarModule,
+    ConfirmPopupModule,
+    ToastModule,
+    MessagesModule,
+    MessageModule,
+    ButtonModule,
+    BrowserAnimationsModule,
+    FileUploadModule,
+    HttpClientModule,
+    AccordionModule,
+    InputTextModule,
+    FormsModule,
+    PasswordModule,
+    DividerModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ConfirmationService, MessageService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

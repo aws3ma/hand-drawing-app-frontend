@@ -1,1 +1,5 @@
-<p>home works!</p>
+<div class=" flex flex-col justify-center items-center h-87">
+  <p-fileUpload mode="advanced" name="images[]" accept="image/*" [customUpload]="true"
+    (uploadHandler)="onFileSelected($event)" (onRemove)="clearImage()" invalidFileTypeMessageSummary="Images only" [showCancelButton]="true">
+  </p-fileUpload>
+</div>

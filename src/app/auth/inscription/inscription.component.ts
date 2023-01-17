@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./inscription.component.css']
 })
 export class InscriptionComponent {
+  username:any;
+  password:any;
+  firstName:any;
+  lastName:any;
 
 }

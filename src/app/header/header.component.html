@@ -1,1 +1,7 @@
-<p>header works!</p>
+<div>
+  <p-toast></p-toast>
+  <p-menubar [model]="items">
+    <p-confirmPopup></p-confirmPopup>
+    <button (click)="logout($event)" label="Logout" icon="pi pi-power-off" pButton class="p-button-danger"></button>
+  </p-menubar>
+</div>
