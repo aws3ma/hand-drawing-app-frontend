@@ -23,8 +23,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AccordionModule } from 'primeng/accordion';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
-import {PasswordModule} from 'primeng/password';
-import { DividerModule } from "primeng/divider";
+import { PasswordModule } from 'primeng/password';
+import { DividerModule } from 'primeng/divider';
+import { GalleriaModule } from 'primeng/galleria';
+import { ImageModule } from 'primeng/image';
+import { ChartModule } from 'primeng/chart';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +55,10 @@ import { DividerModule } from "primeng/divider";
     InputTextModule,
     FormsModule,
     PasswordModule,
-    DividerModule
+    DividerModule,
+    GalleriaModule,
+    ImageModule,
+    ChartModule,
   ],
   providers: [ConfirmationService, MessageService],
   bootstrap: [AppComponent],

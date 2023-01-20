@@ -4,11 +4,12 @@ import { LoginComponent } from './auth/login/login.component';
 import { InscriptionComponent } from './auth/inscription/inscription.component';
 import { HomeComponent } from './home/home.component';
 import { HistoryComponent } from './history/history.component';
+import { CompareComponent } from './compare/compare.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
   {
@@ -28,6 +29,11 @@ const routes: Routes = [
   {
     path: 'history',
     component: HistoryComponent,
+    // canActivate: [AuthGuard]
+  },
+  {
+    path: 'sketch',
+    component: CompareComponent,
     // canActivate: [AuthGuard]
   },
 ];

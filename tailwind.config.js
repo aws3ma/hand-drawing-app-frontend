@@ -7,6 +7,13 @@ module.exports = {
     extend: {
       height: {
         '87': '87vh',
+        '96vh':'96vh',
+        '10vh':'10vh',
+        '3vh':'3vh',
+        '95%':'95%'
+      },
+      margin: {
+        '10vh': '10vh',
       }
     },
   },

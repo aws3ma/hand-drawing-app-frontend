@@ -76,14 +76,16 @@ export class HttpService {
   }
   //image
   createImage(data: any) {
-    return this.client.post(this.server + '/image', data, {
+    return this.client.post(this.server + '/images', data, {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + localStorage.getItem('access'),
       }),
+      reportProgress: true,
+      responseType: 'json',
     });
   }
   getImage(id: any) {
-    return this.client.get(this.server + '/image?original=' + id, {
+    return this.client.get(this.server + '/images?original=' + id, {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + localStorage.getItem('access'),
       }),

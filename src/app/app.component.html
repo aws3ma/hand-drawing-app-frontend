@@ -1,8 +1,12 @@
-<div>
-  <app-header></app-header>
+<div class="relative">
+  <div class="h-10vh">
+    <app-header *ngIf="showHeader"></app-header>
+  </div>
   <div class="h-87">
     <router-outlet>
     </router-outlet>
   </div>
-  <app-footer class="pt-2 mt-2 "></app-footer>
+  <div class="h-3">
+    <app-footer class=""></app-footer>
+  </div>
 </div>
