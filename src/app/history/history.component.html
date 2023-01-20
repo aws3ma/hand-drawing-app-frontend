@@ -1,10 +1,10 @@
 <div class="flex flex-row justify-center h-95% items-center" *ngIf="images">
 
-  <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '640px'}"
+  <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '640px','max-height':'640px'}"
     [numVisible]="5" [circular]="true" [showItemNavigators]="true" [showItemNavigatorsOnHover]="true" [autoPlay]="true">
     <ng-template pTemplate="item" let-item>
-      <div class="flex justify-center items-center  border-2 border-black border-solid p-2" style="width: 640px; height:640px;">
-        <img [src]="item.image" [id]="item.id"  style="width:100%; display: block; "
+      <div class="flex justify-center items-center  border-2 border-black border-solid p-2" style="width: 640px; height:640px; ">
+        <img [src]="item.image" [id]="item.id"  style="width:100%; display: block; max-width: 620px;max-height:620px;"
           (click)="test($event)" class="" />
       </div>
     </ng-template>
