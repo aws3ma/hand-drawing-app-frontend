@@ -1,17 +1,15 @@
-<div class="flex flex-row justify-center h-95% items-center" *ngIf="images">
+<div class="flex flex-row justify-center h-95% items-center mb-6" *ngIf="images">
 
-  <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '500px','max-height':'500px'}"
-    [numVisible]="5" [circular]="true" [showItemNavigators]="true" [showItemNavigatorsOnHover]="true" [autoPlay]="true">
-    <ng-template pTemplate="item" let-item>
-      <div class="flex justify-center items-center  border-2 border-black border-solid p-2" style="width: 500px; height:500px; ">
-        <img [src]="item.image" [id]="item.id"  style="width:100%; display: block; max-width: 480px;max-height:480px;"
-          (click)="test($event)" class="" />
-      </div>
-    </ng-template>
-    <ng-template pTemplate="thumbnail" let-item>
-      <div class="grid grid-nogutter">
-        <img [src]="item.image" style="display: block; height: 50px;" />
-      </div>
-    </ng-template>
-  </p-galleria>
+    <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '500px','max-height':'500px'}" [numVisible]="5" [circular]="true" [showItemNavigators]="true" [showItemNavigatorsOnHover]="true" [autoPlay]="true">
+        <ng-template pTemplate="item" let-item>
+            <div class="flex justify-center items-center  border-2 border-black border-solid p-2" style="width: 500px; height:500px; ">
+                <img [src]="item.image" [id]="item.id" style="width:100%; display: block; max-width: 480px;max-height:480px;" (click)="test($event)" class="" />
+            </div>
+        </ng-template>
+        <ng-template pTemplate="thumbnail" let-item>
+            <div class="grid grid-nogutter">
+                <img [src]="item.image" style="display: block; height: 50px;" />
+            </div>
+        </ng-template>
+    </p-galleria>
 </div>
