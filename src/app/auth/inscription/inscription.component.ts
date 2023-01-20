@@ -14,9 +14,9 @@ export class InscriptionComponent implements OnInit {
   lastName: any;
   constructor(private http: HttpService, private router: Router) {}
   ngOnInit(): void {
-    setTimeout(() => {
-      document.getElementById('firstname')?.click();
-    }, 100);
+    // setTimeout(() => {
+    //   document.getElementById('firstname')?.click();
+    // }, 100);
   }
   inscription() {
     this.http
@@ -30,7 +30,10 @@ export class InscriptionComponent implements OnInit {
         next: (res: any) => {
           this.login();
         },
-        error: (err: any) => {},
+        error: (err: any) => {
+          console.log(err);
+
+        },
       });
   }
   login() {

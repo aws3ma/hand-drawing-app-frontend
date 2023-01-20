@@ -19,7 +19,6 @@ const routes: Routes = [
   {
     path: 'inscription',
     component: InscriptionComponent,
-    canActivate:[]
   },
   {
     path: 'home',
