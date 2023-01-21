@@ -9,7 +9,7 @@ export class HttpService {
   constructor(private client: HttpClient) {
     this.server = 'http://127.0.0.1:8000';
   }
-  // Authentication
+  // authentification
   /**
    *
    * @param data
@@ -46,7 +46,7 @@ export class HttpService {
    * @returns success : user information | fail : error code and details
    */
   //  updateUser(data: any) {
-  //   return this.client.put(this.server + '/authentication/account', data, {
+  //   return this.client.put(this.server + '/authentification/account', data, {
   //     headers: new HttpHeaders({
   //       'Authorization': 'Bearer ' + localStorage.getItem('access')
   //     })
@@ -72,7 +72,7 @@ export class HttpService {
    * @returns success : status code 200 | fail : error code and details
    */
   verifyToken(data: any) {
-    return this.client.post(this.server + '/authentication/token/verify', data);
+    return this.client.post(this.server + '/authentification/token/verify', data);
   }
   //image
   createImage(data: any) {

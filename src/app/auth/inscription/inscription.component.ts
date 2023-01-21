@@ -9,16 +9,27 @@ import { HttpService } from 'src/app/services/http/http.service';
 })
 export class InscriptionComponent implements OnInit {
   username: any;
-  password: any;
+  password: string="";
   firstName: any;
   lastName: any;
+  regex =/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/
   constructor(private http: HttpService, private router: Router) {}
   ngOnInit(): void {
-    // setTimeout(() => {
-    //   document.getElementById('firstname')?.click();
-    // }, 100);
+    if (localStorage.getItem('access')) {
+      this.router.navigateByUrl('/home');
+    }
   }
   inscription() {
+    if(!this.username){
+      return
+    }
+    if(!this.password){
+      return
+    }
+    if(this.password){
+      if(!this.regex.test(this.password))
+        return
+    }
     this.http
       .signup({
         username: this.username,
@@ -32,7 +43,6 @@ export class InscriptionComponent implements OnInit {
         },
         error: (err: any) => {
           console.log(err);
-
         },
       });
   }
@@ -50,5 +60,8 @@ export class InscriptionComponent implements OnInit {
         },
         error: (err: any) => {},
       });
+  }
+  toLogin() {
+    this.router.navigateByUrl('/login');
   }
 }

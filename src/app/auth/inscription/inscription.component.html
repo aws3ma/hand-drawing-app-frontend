@@ -34,7 +34,7 @@
                 <i class="pi pi-user"></i>
               </span>
               <span class="p-float-label">
-                <input type="text" id="username" name="username" pInputText [(ngModel)]="username">
+                <input type="text" id="username" name="username" pInputText [(ngModel)]="username" [ngClass]="{'ng-invalid ng-dirty':!username}" class="ng-invalid ng-dirty">
                 <label for="username">Username</label>
               </span>
             </div>
@@ -45,7 +45,7 @@
                 <i class="pi pi-key"></i>
               </span>
               <span class="p-float-label ">
-                <p-password id="password" name="password" [(ngModel)]="password"  [toggleMask]="true" class="w-full"></p-password>
+                <p-password id="password" name="password" [(ngModel)]="password"  [toggleMask]="true" class="w-full" [ngClass]="{'ng-invalid ng-dirty':!regex.test(password)}"></p-password>
                 <label for="password">Password</label>
               </span>
             </div>
@@ -55,8 +55,8 @@
             <button pButton label="Inscription" class="p-button-primary w-full" (click)="inscription()"></button>
           </div>
           <p class="text-sm font-light text-gray-500 ">
-            Already signed up? <a href="/login"
-              class="font-medium text-primary-600 hover:underline ">login</a>
+            Already signed up?
+            <a class="font-medium text-primary-600 hover:underline cursor-pointer" (click)="toLogin()">login</a>
           </p>
         </form>
       </div>

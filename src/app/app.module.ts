@@ -28,6 +28,7 @@ import { DividerModule } from 'primeng/divider';
 import { GalleriaModule } from 'primeng/galleria';
 import { ImageModule } from 'primeng/image';
 import { ChartModule } from 'primeng/chart';
+import { AuthGuard } from './auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +61,7 @@ import { ChartModule } from 'primeng/chart';
     ImageModule,
     ChartModule,
   ],
-  providers: [ConfirmationService, MessageService],
+  providers: [ConfirmationService, MessageService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -12,7 +12,7 @@
                 <i class="pi pi-user"></i>
               </span>
               <span class="p-float-label">
-                <input type="text" id="username" name="username" pInputText [(ngModel)]="username">
+                <input type="text" id="username" name="username" [ngClass]="{'ng-invalid ng-dirty':!username}" pInputText [(ngModel)]="username" />
                 <label for="username">Username</label>
               </span>
             </div>
@@ -23,7 +23,7 @@
                 <i class="pi pi-key"></i>
               </span>
               <span class="p-float-label">
-                <p-password id="password" name="password" [(ngModel)]="password"  [toggleMask]="true" class="w-full" [feedback]="false"></p-password>
+                <p-password id="password" name="password" [(ngModel)]="password" [ngClass]="{'ng-invalid ng-dirty':!password}" [toggleMask]="true" class="w-full" [feedback]="false"></p-password>
                 <label for="password">Password</label>
               </span>
             </div>
@@ -33,8 +33,8 @@
             <button pButton label="Login" class="p-button-primary w-full" (click)="login()" ></button>
           </div>
           <p class="text-sm font-light text-gray-500 ">
-            Don’t have an account yet? <a href="/inscription"
-              class="font-medium text-primary-600 hover:underline ">Sign up</a>
+            Don’t have an account yet? <a
+              class="font-medium text-primary-600 hover:underline cursor-pointer" (click)="toInscription()">Sign up</a>
           </p>
         </form>
       </div>
