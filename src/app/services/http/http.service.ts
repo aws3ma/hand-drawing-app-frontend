@@ -82,6 +82,7 @@ export class HttpService {
       }),
       reportProgress: true,
       responseType: 'json',
+      observe: "events",
     });
   }
   getImage(id: any) {
@@ -89,6 +90,9 @@ export class HttpService {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + localStorage.getItem('access'),
       }),
+      reportProgress: true,
+      responseType: 'json',
+      observe: "events",
     });
   }
 }

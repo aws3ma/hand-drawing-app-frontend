@@ -29,6 +29,7 @@ import { GalleriaModule } from 'primeng/galleria';
 import { ImageModule } from 'primeng/image';
 import { ChartModule } from 'primeng/chart';
 import { AuthGuard } from './auth.guard';
+import {ProgressBarModule} from 'primeng/progressbar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,6 +61,7 @@ import { AuthGuard } from './auth.guard';
     GalleriaModule,
     ImageModule,
     ChartModule,
+    ProgressBarModule,
   ],
   providers: [ConfirmationService, MessageService, AuthGuard],
   bootstrap: [AppComponent],

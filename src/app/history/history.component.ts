@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../services/http/http.service';
 import { Router } from '@angular/router';
+import { HttpEventType, HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-history',
@@ -23,11 +24,18 @@ export class HistoryComponent implements OnInit {
       numVisible: 1,
     },
   ];
+  progress:number =0
   constructor(private http: HttpService, private router: Router) {}
   ngOnInit(): void {
     this.http.getImage('all').subscribe({
       next: (res: any) => {
-        this.images = res.original;
+        if (res.type === HttpEventType.DownloadProgress) {
+          this.progress = Math.round(100 * res.loaded / res.total);
+        }
+        if (res instanceof HttpResponse){
+
+          this.images = res.body.original;
+        }
       },
       error: (err: any) => {},
     });

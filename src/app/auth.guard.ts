@@ -66,8 +66,6 @@ export class AuthGuard implements CanActivate {
         test = false;
       }
     }
-    console.log(test);
-
     return test;
   }
   canActivate(): boolean {
