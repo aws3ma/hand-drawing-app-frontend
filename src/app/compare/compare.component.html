@@ -1,0 +1,108 @@
+<p-progressBar [value]="progress" [showValue]="false" [style]="{'height': '4px'}" *ngIf="progress>0 && progress<100"></p-progressBar>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-2 justify-items-center mb-12 pb-12" *ngIf="data">
+  <div class="flex flex-col items-center w-full px-28 max-w-md">
+    <p-image  [src]="data.original.image" [preview]="true">
+
+    </p-image>
+  </div>
+  <div class="flex flex-col items-center w-full px-28 max-w-md">
+    <p-image  [src]="data.sketch.image" [preview]="true">
+
+    </p-image>
+  </div>
+  <div class="w-full ">
+    <table class="border-collapse w-full">
+      <thead>
+        <tr>
+          <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
+            Width</th>
+          <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
+            Height</th>
+          <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
+            Size</th>
+          <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
+            Channels number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+          <td
+            class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+            <span
+              class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase"></span>{{data.original.width}}
+          </td>
+          <td
+            class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b  block lg:table-cell relative lg:static">
+            <span
+              class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase"></span>{{data.original.height}}
+          </td>
+          <td
+            class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b  block lg:table-cell relative lg:static">
+            <span
+              class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase"></span>{{data.original.weight}} kb
+          </td>
+          <td
+            class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b  block lg:table-cell relative lg:static">
+            <span
+              class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase"></span>{{data.original.channels_number}}
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <div class="w-full ">
+    <table class="border-collapse w-full">
+      <thead>
+        <tr>
+          <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
+            Width</th>
+          <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
+            Height</th>
+          <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
+            Size</th>
+          <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
+            Channels number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+          <td
+            class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+            <span
+              class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase"></span>{{data.original.width}}
+          </td>
+          <td
+            class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b  block lg:table-cell relative lg:static">
+            <span
+              class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase"></span>{{data.original.height}}
+          </td>
+          <td
+            class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b  block lg:table-cell relative lg:static">
+            <span
+              class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase"></span>{{data.sketch.weight}} kb
+          </td>
+          <td
+            class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b  block lg:table-cell relative lg:static">
+            <span
+              class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase"></span>{{data.sketch.channels_number}}
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="w-full ">
+    <div class="card">
+      <p-chart type="bar" [data]="basicDataOriginal" [options]="basicOptions"></p-chart>
+    </div>
+  </div>
+  <div class="w-full ">
+    <div class="card">
+      <p-chart type="bar" [data]="basicDataSketch" [options]="basicOptions"></p-chart>
+    </div>
+  </div>
+</div>

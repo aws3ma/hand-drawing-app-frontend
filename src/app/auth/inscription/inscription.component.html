@@ -1,0 +1,65 @@
+<section class="flex flex-col justify-center items-center h-87 ">
+  <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+    <div class="w-full mb-10vh bg-white rounded-lg shadow  md:mt-0 sm:max-w-md xl:p-0">
+      <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+        <h1 class="text-xl font-bold leading-tight tracking-tight flex justify-center md:text-2xl ">
+          Sign up to your account
+        </h1>
+        <form class="space-y-4 md:space-y-6">
+          <div class="field col-12 md:col-4">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon">
+                <i class=""></i>
+              </span>
+              <span class="p-float-label">
+                <input type="text" id="firstname" name="firstname" pInputText [(ngModel)]="firstName" autofocus>
+                <label for="firstname">First name</label>
+              </span>
+            </div>
+          </div>
+          <div class="field col-12 md:col-4">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon">
+                <i class=""></i>
+              </span>
+              <span class="p-float-label">
+                <input type="text" id="lastname" name="lastname" pInputText [(ngModel)]="lastName" >
+                <label for="lastname">Last name</label>
+              </span>
+            </div>
+          </div>
+          <div class="field col-12 md:col-4">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon">
+                <i class="pi pi-user"></i>
+              </span>
+              <span class="p-float-label">
+                <input type="text" id="username" name="username" pInputText [(ngModel)]="username" [ngClass]="{'ng-invalid ng-dirty':!username}" class="ng-invalid ng-dirty">
+                <label for="username">Username</label>
+              </span>
+            </div>
+          </div>
+          <div class="field col-12 md:col-4">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon">
+                <i class="pi pi-key"></i>
+              </span>
+              <span class="p-float-label ">
+                <p-password id="password" name="password" [(ngModel)]="password"  [toggleMask]="true" class="w-full" [ngClass]="{'ng-invalid ng-dirty':!regex.test(password)}"></p-password>
+                <label for="password">Password</label>
+              </span>
+            </div>
+          </div>
+          <div class="field col-12 md:col-4">
+
+            <button pButton label="Inscription" class="p-button-primary w-full" (click)="inscription()"></button>
+          </div>
+          <p class="text-sm font-light text-gray-500 ">
+            Already signed up?
+            <a class="font-medium text-primary-600 hover:underline cursor-pointer" (click)="toLogin()">login</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
